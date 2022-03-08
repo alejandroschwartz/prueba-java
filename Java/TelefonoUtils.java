@@ -1,44 +1,6 @@
-import java.util.Scanner;
-
-public class Telefono {
-  public static void main(String args[]) {
-    int respuesta = 0;
-
-    do {
-			imprimir("Bienvenido!");
-      System.out.println("Seleciones una opcion:");
-      System.out.println("1. Covertir palabra a numero");
-      System.out.println("0. Salir");
-
-      System.out.println();
-      System.out.print("Ingrese opcion: ");
-      Scanner scanner = new Scanner(System.in);
-
-      respuesta = Integer.valueOf(scanner.nextLine());
-
-      switch (respuesta) {
-        case 0:
-          imprimir("! Se terminó el programa.");
-          break;
-        case 1:
-          imprimir("Convertir palabra a numero");
-
-          System.out.print("Introduzca el texto: ");
-          Scanner entrada = new Scanner(System.in);
-          String nombre = entrada.nextLine().toLowerCase();
-
-          String[] cadena = nombre.split("");
-          String[] num = miSwitch(cadena);
-          resultado(num);
-
-          break;
-        default:
-          imprimir("! Selecciona una opción correcta.");
-      }
-    } while (respuesta != 0);
-  } 
-
-	/**
+public class TelefonoUtils {
+  
+  /**
 	 * Descripción: Método que imprime texto con un salto de linea.
 	 * 
 	 * @param texto Título a imprimir.
@@ -62,7 +24,7 @@ public class Telefono {
 		imprimir(resp);
   }
 
-	/**
+  /**
 	 * Descripción: Función que compara las letras ingresadas con los números, los convierte y retorna array de String.
 	 * 
 	 * @param cadena Cadena de array tipo String de letras.
